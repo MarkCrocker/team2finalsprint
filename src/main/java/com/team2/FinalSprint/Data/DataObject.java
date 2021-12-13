@@ -1,12 +1,12 @@
 package com.team2.FinalSprint.Data;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import lombok.Getter;
+
 
 
 import javax.persistence.*;
 
-@Getter
+
 @Entity
 public class DataObject {
     @Id
