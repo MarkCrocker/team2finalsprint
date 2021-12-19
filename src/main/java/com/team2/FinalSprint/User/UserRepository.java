@@ -10,8 +10,8 @@ import java.util.List;
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
     //findById is built in by default
-
-    List<User> findByUsername(@Param("username") String username);
+    User findByUsername(@Param("username") String username);
+    boolean existsByUsername(@Param("username") String username);
 }
 
 /*
