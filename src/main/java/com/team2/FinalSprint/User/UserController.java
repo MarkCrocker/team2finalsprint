@@ -37,8 +37,8 @@ public class UserController {
     public String loginSubmit(@RequestParam("username_login") String username_login, @RequestParam("password_login") String password_login){
         if (userRepository.existsByUsername(username_login)){
             User user = userRepository.findByUsername(username_login);
-            //TODO: add encrypted password checking
-            if(password_login.equals(user.getPassword())){
+            boolean valid = passwordEncoder.matches(password_login, user.getPassword());
+            if(valid){
                 System.out.println("Authenticated");
                 //TODO: add proper authentication and sessions to keep user logged in
             } else { System.out.println("Failed to log in."); }
