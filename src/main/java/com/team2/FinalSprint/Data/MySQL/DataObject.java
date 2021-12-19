@@ -1,4 +1,4 @@
-package com.team2.FinalSprint.Data;
+package com.team2.FinalSprint.Data.MySQL;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 

@@ -1,4 +1,4 @@
-package com.team2.FinalSprint.Data;
+package com.team2.FinalSprint.Data.MySQL;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "mock_data", path = "mock_data")
 public interface DataRepository extends PagingAndSortingRepository<DataObject, Integer> {
-
+    //MySQL database Repository
     List<DataObject>findById(@Param("id")int id);
     List<DataObject>findByCompany(@Param("company")String company);
     List<DataObject>findByCity(@Param("city")String city);
