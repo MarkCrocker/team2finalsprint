@@ -33,7 +33,10 @@ public class DataController {
         //TODO: replace with proper database decision logic
         System.out.println("Database selected:" + select_database);
 
-        List<DataObject> dataObjects = dataRepository.findByCompanyOrCityOrJobOpeningOrContactIgnoreCase(search_input,search_input,search_input,search_input);
+        if(search_input.trim().length() < 1){
+            return "redirect:/";
+        }
+        List<DataObject> dataObjects = dataRepository.findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(search_input,search_input,search_input,search_input);
 
         for(DataObject dataObject : dataObjects){
             //TODO: replace the console print with a method to send the data to Thymeleaf template
