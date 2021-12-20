@@ -27,22 +27,26 @@ public class DataController {
         return dataRepository.findAll();
     }
 
+//  Replaced in WebController, might be obsolete, leaving until confirmed.
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String searchSubmit(@RequestParam("search_input") String search_input, @RequestParam("select_database") String select_database){
-        //TODO: replace with proper database decision logic
-        System.out.println("Database selected:" + select_database);
-
-        List<DataObject> dataObjects = dataRepository.findByCompanyOrCityOrJobOpeningOrContactIgnoreCase(search_input,search_input,search_input,search_input);
-
-        for(DataObject dataObject : dataObjects){
-            //TODO: replace the console print with a method to send the data to Thymeleaf template
-            System.out.println(dataObject.getCompany());
-            System.out.println(dataObject.getCity());
-            System.out.println(dataObject.getJobOpening());
-            System.out.println(dataObject.getContact());
-        }
-        return "redirect:/search";
-    }
+//    @RequestMapping(value = "/search", method = RequestMethod.POST)
+//    public String searchSubmit(@RequestParam("search_input") String search_input, @RequestParam("select_database") String select_database){
+//        //TODO: replace with proper database decision logic
+//        System.out.println("Database selected:" + select_database);
+//
+//        if(search_input.trim().length() < 1){
+//            return "redirect:/";
+//        }
+//        List<DataObject> dataObjects = dataRepository.findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(search_input,search_input,search_input,search_input);
+//
+//        for(DataObject dataObject : dataObjects){
+//            //TODO: replace the console print with a method to send the data to Thymeleaf template
+//            System.out.println(dataObject.getCompany());
+//            System.out.println(dataObject.getCity());
+//            System.out.println(dataObject.getJobOpening());
+//            System.out.println(dataObject.getContact());
+//        }
+//        return "search";
+//    }
 
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,6 +8,20 @@
 <a href='/'>Home</a><br />
 
 <h2>Results found</h2>
+<table>
+    <tr>
+        <th>Company</th>
+        <th>City</th>
+        <th>Job</th>
+        <th>Contact</th>
+    </tr>
+    <tr th:each="dataObject : ${dataObjects}">
+        <td th:text="${dataObject.company}"></td>
+        <td th:text="${dataObject.city}"></td>
+        <td th:text="${dataObject.jobOpening}"></td>
+        <td th:text="${dataObject.contact}"></td>
+    </tr>
+</table>
 
 </body>
 </html>

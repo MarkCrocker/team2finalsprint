@@ -12,8 +12,8 @@
 <a href='/login'>Login</a>
 <a href='/logout'>Logout</a>
 
-<form method="POST" action="/search">
-    <input id="search_input" type="text" name="search_input" placeholder="Search">
+<form method="GET" action="/search">
+    <input id="keyword" type="text" name="keyword" placeholder="Search">
     <select id="select_database" name="select_database">
         <option value="mySQL">MySQL</option>
         <option value="postgres">Postgres</option>
