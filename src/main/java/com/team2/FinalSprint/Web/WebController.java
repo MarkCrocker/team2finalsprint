@@ -28,4 +28,9 @@ public class WebController {
     public String logout(){
         return "logout";
     }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(){
+        return "search";
+    }
 }

@@ -12,13 +12,9 @@ public class DataObject {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column
     private String company;
-    @Column
     private String city;
-    @Column
     private String jobOpening;
-    @Column
     private String contact;
 
     public int getId() {
