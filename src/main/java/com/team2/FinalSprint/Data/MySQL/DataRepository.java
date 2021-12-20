@@ -20,14 +20,16 @@ public interface DataRepository extends PagingAndSortingRepository<DataObject, I
     //https://bushansirgur.in/spring-data-jpa-finder-query-methods-by-multiple-field-names-with-examples/
     //https://www.baeldung.com/spring-jpa-like-queries
 
-    //TODO: write custom query to SELECT * FROM table WHERE 'partial expression is LIKE any column' to replace below method
+
     @Query("SELECT dataObject FROM DataObject dataObject WHERE CONCAT(dataObject.company, ' ', dataObject.city, ' ', dataObject.jobOpening, ' ', dataObject.contact) LIKE %?1%")
     List<DataObject> search(String keyword);
 
-    List<DataObject>findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(
-            @Param("query")String company,
-            @Param("city")String city,
-            @Param("jobOpening")String jobOpening,
-            @Param("contact")String contact
-    );
+    //Obsolete, but leaving for future reference
+
+//    List<DataObject>findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(
+//            @Param("query")String company,
+//            @Param("city")String city,
+//            @Param("jobOpening")String jobOpening,
+//            @Param("contact")String contact
+//    );
 }

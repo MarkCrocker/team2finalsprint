@@ -38,8 +38,8 @@ public class WebController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String getData(Model model, @Param("keyword") String keyword){
-
+    public String getData(Model model, @Param("keyword") String keyword, @Param("select_database") String select_database){
+        //TODO: process data from correct database from user choice
         List<DataObject> dataObjects = searchService.findAllData(keyword);
         model.addAttribute("dataObjects", dataObjects);
         model.addAttribute("keyword",keyword);

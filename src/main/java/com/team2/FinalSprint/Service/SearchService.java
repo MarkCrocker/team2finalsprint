@@ -16,8 +16,7 @@ public class SearchService {
 
     public List<DataObject> findAllData(String keyword){
         if (keyword != null) {
-            return dataRepository.findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(keyword,keyword,keyword,keyword);
-//            return dataRepository.search(keyword);
+            return dataRepository.search(keyword);
         }
         return (List<DataObject>) dataRepository.findAll();
     }
