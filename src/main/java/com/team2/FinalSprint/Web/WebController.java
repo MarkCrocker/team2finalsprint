@@ -43,6 +43,7 @@ public class WebController {
         List<DataObject> dataObjects = searchService.findAllData(keyword);
         model.addAttribute("dataObjects", dataObjects);
         model.addAttribute("keyword",keyword);
+        model.addAttribute("select_database",select_database);
         return "search";
     }
 }
