@@ -2,6 +2,7 @@ package com.team2.FinalSprint.Btree;
 
 
 public class BST {
+
     public Node node;
     public BST(int value){
         node = new Node(value);
@@ -26,4 +27,13 @@ public class BST {
             inOrder(node.right);
         }
     }
+
+    public Node getNode() {
+        return node;
+    }
+
+    public void setNode(Node node) {
+        this.node = node;
+    }
+
 }

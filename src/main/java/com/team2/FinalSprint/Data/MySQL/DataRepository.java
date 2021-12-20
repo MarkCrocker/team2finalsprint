@@ -25,7 +25,6 @@ public interface DataRepository extends PagingAndSortingRepository<DataObject, I
     List<DataObject> search(String keyword);
 
     //Obsolete, but leaving for future reference
-
 //    List<DataObject>findByCompanyOrCityOrJobOpeningOrContactContainsIgnoreCase(
 //            @Param("query")String company,
 //            @Param("city")String city,
