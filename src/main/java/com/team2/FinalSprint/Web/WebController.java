@@ -46,4 +46,16 @@ public class WebController {
         model.addAttribute("select_database",select_database);
         return "search";
     }
+
+    @RequestMapping(value = "/treesort", method = RequestMethod.GET)
+    public String treesort(){
+        return "treesort";
+    }
+
+    @RequestMapping(value = "/bst", method = RequestMethod.GET)
+    public String getBst(Model model, @Param("data") String data){
+        model.addAttribute("data",data);
+        model.addAttribute("sorted",data);
+        return "bst";
+    }
 }
