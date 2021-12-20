@@ -1,5 +1,6 @@
 package com.team2.FinalSprint.Web;
 
+import com.team2.FinalSprint.Btree.BST;
 import com.team2.FinalSprint.Data.MySQL.DataObject;
 import com.team2.FinalSprint.Service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 
@@ -54,6 +56,19 @@ public class WebController {
 
     @RequestMapping(value = "/bst", method = RequestMethod.GET)
     public String getBst(Model model, @Param("data") String data){
+        String[] stringArray = data.split(",");
+        int size = stringArray.length;
+        int[] arr = new int [size];
+        for (int i=0; i<size; i++){
+            arr[i] = Integer.parseInt(stringArray[i]);
+        }
+        BST bst = new BST(arr[0]);
+        for(int num : arr){
+            bst.insert(bst.node, num);
+        }
+        //For debugging
+        bst.inOrder(bst.node);
+
         model.addAttribute("data",data);
         model.addAttribute("sorted",data);
         return "bst";

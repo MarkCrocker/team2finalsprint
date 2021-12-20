@@ -2,8 +2,8 @@ package com.team2.FinalSprint.Btree;
 
 
 public class BST {
-    Node node;
-    BST(int value){
+    public Node node;
+    public BST(int value){
         node = new Node(value);
     }
     public Node insert(Node node, int value){
